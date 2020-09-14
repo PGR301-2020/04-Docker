@@ -1,5 +1,14 @@
 # LAB 4
 
+# Shortlist of docker commands you will need
+
+* docker build - lager docker image basert på docker files
+* docker ps - hva kjører? 
+* docker images - hva har jeg bygget ? 
+* docker run - start en container (fra et image)
+* docker logs - se på loggen fra en container 
+* docker exec --it <image> bash - "logge inn" i en container for å se hva som skjer for debug (inception) 
+
 Dockerize en Spring Boot applikasjon - og push denne til docker hub
 
 Før du starte må du ha Docker installert på maskinen din. Hvis du kjører
@@ -12,7 +21,8 @@ Skal du få en output som ser slik ut ;
  Pulling repository hello-world
  91c95931e552: Download complete
  a8219747be10: Download complete
- Status: Downloaded newer image for hello-world:latest
+ Status: 
+ Downloaded newer image for hello-world:latest
  Hello from Docker.
  This message shows that your installation appears to be working correctly.
 
