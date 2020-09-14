@@ -1,7 +1,8 @@
 # LAB 4
 
-# Shortlist of docker commands you will need
+# Liste over Docker kommandoer dere kommer til å trenge; 
 
+* docker tag 
 * docker build - lager docker image basert på docker files
 * docker ps - hva kjører? 
 * docker images - hva har jeg bygget ? 
