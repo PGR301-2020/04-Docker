@@ -92,7 +92,6 @@ docker tag fantasticapp glennbech/fantasticapp
 docker push glennbech/fantasticapp
 ```
 
-
 Verdien <tag> er altså en *tag* som du bestemte deg for når du gjorde docker build (pgr301:latest for eksempel). <tag_remote> kan du bestemme deg for nå, fordi det er verdien som skal brukes for docker hub. 
 
 ## Del på Slack
@@ -104,7 +103,13 @@ Når dere har pushet container image til Docker Hub - del navnet på slack (bruk
 ```
 Husk port mappings!
 
+
+
 Bonusoppgaver; 
 
+- Se på https://github.com/PGR301-2020/01-devops-helloworld - Her pusher jeg Docker image til Docker hub fra travis. 
+Neste gang skal vi se på dette + Feature toggles. Du kan tyvstarte på det.
+- Les om Docker i travis CI https://docs.travis-ci.com/user/docker/ 
+- Jeg har skamløst kopiert strategien med å bygge docker containere fra travis fra  i fjor. Har det skjedd noe nytt? Er  det enklere måter å bygge Docker container images fra Traivs og pushe til Docker hub? Gjør research og del på Slack eller Cancas :-)
 - Se på rammeverket https://www.togglz.org/
 - Se på terraform som kommer snart...  https://learn.hashicorp.com/tutorials/terraform/install-cli
