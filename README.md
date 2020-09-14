@@ -124,8 +124,19 @@ Legg til følgende shell script i rotkatalogen til prosjektet
     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     docker build . --tag <et navn du finner på for din app> --build-arg JAR_FILE=./target/din jar fil>
     docker tag  <et navn du finner på for din app>  glennbech/ <et navn du finner på for din app>
-    docker push glennbech/ <et navn du finner på for din app>
+    docker push <ditt docker hub username>/<et navn du finner på for din app>
 ```
+
+eksempel
+
+```
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker build . --tag pgr301-pingpong --build-arg JAR_FILE=./target/travisdemo-0.0.1-SNAPSHOT.jar
+docker tag pgr301-pingpong  glennbech/pgr301-pingpong
+docker push glennbech/pgr301-pingpong
+```
+
 
 Når travis kjører, trenger den å ha verdier for miljøvariablene $DOCKER_PASSWORD og $DOCKER_USERNAME
 dette må settes med travis kommandolinje 
