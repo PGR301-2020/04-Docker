@@ -1,4 +1,4 @@
-# LAB 7
+# LAB 4
 
 Dockerize en Spring Boot applikasjon - og push denne til docker hub
 
