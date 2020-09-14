@@ -104,6 +104,51 @@ Når dere har pushet container image til Docker Hub - del navnet på slack (bruk
 Husk port mappings!
 
 
+# Travis bygger docker image 
+
+Legg til følgende shell script i rotkatalogen til prosjektet 
+
+```
+    #!/bin/bash
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    docker build . --tag pgr301-pingpong --build-arg JAR_FILE=./target/travisdemo-0.0.1-SNAPSHOT.jar
+    docker tag pgr301-pingpong  glennbech/pgr301-pingpong
+    docker push glennbech/pgr301-pingpong
+    docker run -p 8080:8080 glennbech/pgr301-pingpong
+```
+
+Når travis kjører, trenger den å ha verdier for miljøvariablene $DOCKER_PASSWORD og $DOCKER_USERNAME
+dette må settes med travis kommandolinje 
+
+```
+travis encrypt DOCKER_USERNAME=glennbech -add env.global
+travis encrypt DOCKER_PASSWORD=sushh -add env.global
+```
+
+Etter du har kjørt disse to kommandoene vil du se at .travis.yml har endret seg og at du vil ha to krypterte verdier.
+Dette er brukernavn og passord -og blir gjort tilgjengelig for Travis under bygget - og det er det som får 
+denne linjen i scriptet til å fungere
+
+``` bash 
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+```
+
+Nå gjenstår det bare å få travis til å kjøre scriptet. Vi legger til "service" og "script" elementer
+
+```
+language: java
+
+services:
+- docker
+
+script:
+  - bash name_of_the_script_file
+
+env:
+  global:
+      Values will be added by travis encrypt here...
+```
+
 
 Bonusoppgaver; 
 
