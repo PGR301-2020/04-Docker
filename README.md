@@ -10,7 +10,7 @@
 * docker logs - se på loggen fra en container 
 * docker exec --it <image> bash - "logge inn" i en container for å se hva som skjer for debug (inception) 
 
-Dockerize en Spring Boot applikasjon - og push denne til docker hub
+# Dagens oppgave - Dockerize en Spring Boot applikasjon - og push denne til docker hub
 
 Før du starte må du ha Docker installert på maskinen din. Hvis du kjører
 
