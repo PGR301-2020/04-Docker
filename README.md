@@ -173,8 +173,7 @@ env:
 
 Bonusoppgaver; 
 
-- Se på https://github.com/PGR301-2020/01-devops-helloworld - Her pusher jeg Docker image til Docker hub fra travis. 
-Neste gang skal vi se på dette + Feature toggles. Du kan tyvstarte på det.
+- Registrer deg for Google Cloud Platfor (GCP) og se på tjeneste Google Cloud Run - https://cloud.google.com/run/ - gjør tutorial https://cloud.google.com/run/docs/quickstarts/build-and-deploy
 - Les om Docker i travis CI https://docs.travis-ci.com/user/docker/ 
 - Jeg har skamløst kopiert strategien med å bygge docker containere fra travis fra  i fjor. Har det skjedd noe nytt? Er  det enklere måter å bygge Docker container images fra Traivs og pushe til Docker hub? Gjør research og del på Slack eller Cancas :-)
 - Se på rammeverket https://www.togglz.org/
